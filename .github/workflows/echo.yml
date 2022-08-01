@@ -1,4 +1,4 @@
-name: echo action
+name: echo action main
 on:
   workflow_dispatch:
   push:

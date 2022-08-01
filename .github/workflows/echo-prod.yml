@@ -1,10 +1,10 @@
-name: echo action
+name: echo action prod
 on:
   workflow_dispatch:
   push:
     branches: [ env/prod ]
 jobs:
-  echo-job-main:
+  echo-job-prod:
     runs-on: ubuntu-latest
     if: ${{ always() }}
     steps:
