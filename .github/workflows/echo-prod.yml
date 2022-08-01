@@ -2,12 +2,12 @@ name: echo action
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches: [ env/prod ]
 jobs:
   echo-job-main:
     runs-on: ubuntu-latest
     if: ${{ always() }}
     steps:
-      - name: Run a script
+      - name: Run a script on prod
         run: |
           echo Hello, world!
