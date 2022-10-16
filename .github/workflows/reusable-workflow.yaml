@@ -1,0 +1,13 @@
+on:
+  workflow_call:
+    inputs:
+      my-message:
+        required: true
+        type: string
+jobs:
+  reusable_workflow_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Write action summary
+      run: |
+        echo "### Hello ${{ inputs.my-message }}! :rocket:" >> $GITHUB_STEP_SUMMARY
