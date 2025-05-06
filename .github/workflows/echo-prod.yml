@@ -3,11 +3,19 @@ on:
   workflow_dispatch:
   push:
     branches: [ env/prod ]
+permissions:
+  contents: read
+
 jobs:
   echo-job-prod:
     runs-on: ubuntu-latest
     if: ${{ always() }}
     steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@0634a2670c59f64b4a01f0f96f84700a4088b9f0 # v2.12.0
+        with:
+          egress-policy: audit
+
       - name: Run a script on prod
         run: |
           echo Hello, world!
