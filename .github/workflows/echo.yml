@@ -25,6 +25,10 @@ jobs:
         run: |
           ls -la $RUNNER_TOOL_CACHE
 
+      - name: ls RUNNER_TOOL_CACHE - Python
+        run: |
+          ls -la $RUNNER_TOOL_CACHE/Python
+
   run-reusable-workflow:
     needs: echo-job-main
     uses: ./.github/workflows/reusable-workflow.yml
