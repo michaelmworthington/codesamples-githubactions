@@ -17,6 +17,14 @@ jobs:
         run: |
           echo Hello, world!
 
+      - name: Show RUNNER_TOOL_CACHE - env
+        run: |
+          env | sort
+
+      - name: ls RUNNER_TOOL_CACHE
+        run: |
+          ls -la $RUNNER_TOOL_CACHE
+
   run-reusable-workflow:
     needs: echo-job-main
     uses: ./.github/workflows/reusable-workflow.yml
