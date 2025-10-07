@@ -31,7 +31,7 @@ jobs:
 
       - name: ls RUNNER_TOOL_CACHE - Python 3.12.11
         run: |
-          ls -la $RUNNER_TOOL_CACHE/Python/3.12.11
+          ls -la $RUNNER_TOOL_CACHE/Python/3.12.11/x64
 
   run-reusable-workflow:
     needs: echo-job-main
